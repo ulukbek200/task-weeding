@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.visual-check/
+home-*-check.png
+npm-debug.log*
+.claude/
+CLAUDE.md
