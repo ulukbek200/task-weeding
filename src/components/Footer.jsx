@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="site-footer">
       <div>
         <a className="brand-mark brand-mark-light" href="/">
-          TOY
+          toyly.kg
         </a>
         <p>Digital Invitations</p>
       </div>
@@ -25,7 +25,7 @@ export function Footer() {
         <a className="button button-light" href="#catalog">
           Выбрать дизайн
         </a>
-        <span>TOY © 2026</span>
+        <span>toyly.kg © 2026</span>
       </div>
     </footer>
   );

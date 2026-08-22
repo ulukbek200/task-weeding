@@ -21,8 +21,8 @@ export function Header() {
 
   return (
     <header className={`site-header ${isScrolled ? "is-scrolled" : ""}`}>
-      <a className="brand-mark" href="/" aria-label="TOY на главную">
-        TOY
+      <a className="brand-mark" href="/" aria-label="toyly.kg на главную">
+        toyly.kg
       </a>
 
       <nav className="desktop-nav" aria-label="Основная навигация">
