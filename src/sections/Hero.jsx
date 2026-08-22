@@ -35,7 +35,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-visual" aria-label="Превью шаблонов toyly.kg">
+      <div className="hero-visual" aria-label="Превью шаблонов TOYLY">
         {heroTemplates.map((template, index) => (
           <PhonePreview
             key={template.id}

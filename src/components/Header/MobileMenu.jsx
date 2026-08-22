@@ -19,7 +19,7 @@ export function MobileMenu({ open, onClose }) {
       <aside className="drawer-panel" aria-label="Мобильное меню">
         <div className="drawer-top">
           <a className="brand-mark" href="/" onClick={onClose}>
-            toyly.kg
+            TOYLY
           </a>
           <button
             className="icon-button"
