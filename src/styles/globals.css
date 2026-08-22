@@ -1253,3 +1253,89 @@ button {
     transition-duration: 1ms !important;
   }
 }
+.form-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(114, 41, 54, 0.24);
+  border-radius: 6px;
+  background: rgba(114, 41, 54, 0.08);
+  color: var(--color-wine);
+  font-size: 14px;
+  font-weight: 650;
+  text-transform: none;
+  white-space: pre-line;
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+  transform: none;
+}
+
+.order-success {
+  align-self: start;
+  display: grid;
+  gap: 18px;
+  max-width: 680px;
+  padding: 32px;
+  border: 1px solid rgba(23, 22, 18, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.success-mark {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  color: var(--color-light);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.order-success h2 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 5vw, 74px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.order-success p:not(.eyebrow) {
+  max-width: 520px;
+  margin: 0;
+  color: rgba(23, 22, 18, 0.68);
+  font-size: 18px;
+}
+
+.order-success dl {
+  display: grid;
+  gap: 10px;
+  margin: 8px 0 6px;
+}
+
+.order-success dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 42px;
+  border-bottom: 1px solid rgba(23, 22, 18, 0.12);
+}
+
+.order-success dt,
+.order-success dd {
+  margin: 0;
+}
+
+.order-success dt {
+  color: rgba(23, 22, 18, 0.6);
+}
+
+.order-success dd {
+  color: var(--color-wine);
+  font-weight: 760;
+  text-align: right;
+}
