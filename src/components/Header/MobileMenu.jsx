@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
 const mobileLinks = [
-  { label: "\u0414\u0438\u0437\u0430\u0439\u043d\u044b", href: "#catalog" },
-  { label: "\u041a\u0430\u043a \u044d\u0442\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442", href: "#process" },
-  { label: "\u0427\u0442\u043e \u0432\u0445\u043e\u0434\u0438\u0442", href: "#included" },
+  { label: "Дизайны", href: "#catalog" },
+  { label: "Как это работает", href: "#process" },
+  { label: "Что входит", href: "#included" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -37,14 +37,10 @@ export function MobileMenu({ open, onClose }) {
         type="button"
         onClick={onClose}
         tabIndex={open ? 0 : -1}
-        aria-label="\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e"
+        aria-label="Закрыть меню"
       />
 
-      <aside className="drawer-panel" role="dialog" aria-modal={open} aria-label="\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u043e\u0435 \u043c\u0435\u043d\u044e">
-        <div className="drawer-ornament" aria-hidden="true">
-          T
-        </div>
-
+      <aside className="drawer-panel" role="dialog" aria-modal={open} aria-label="Мобильное меню">
         <div className="drawer-inner">
           <div className="drawer-top">
             <a className="brand-mark drawer-brand" href="/" onClick={onClose}>
@@ -54,8 +50,8 @@ export function MobileMenu({ open, onClose }) {
               className="icon-button drawer-close-button"
               type="button"
               onClick={onClose}
-              aria-label="\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e"
-              title="\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e"
+              aria-label="Закрыть меню"
+              title="Закрыть меню"
             >
               <span className="drawer-close-icon" aria-hidden="true">
                 <span />
@@ -66,37 +62,39 @@ export function MobileMenu({ open, onClose }) {
 
           <p className="drawer-label">PREMIUM DIGITAL INVITATIONS</p>
 
-          <nav className="drawer-nav" aria-label="\u041d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044f">
+          <nav className="drawer-nav" aria-label="Навигация">
             {mobileLinks.map((link, index) => (
               <a
                 className="drawer-nav-link"
                 key={link.href}
                 href={link.href}
-                style={{ "--item-delay": (index * 60 + 120) + "ms" }}
+                style={{ "--item-delay": (index * 55 + 110) + "ms" }}
                 onClick={onClose}
               >
                 <span className="drawer-nav-number">{String(index + 1).padStart(2, "0")}</span>
                 <span className="drawer-nav-title">{link.label}</span>
-                <span className="drawer-nav-arrow" aria-hidden="true">\u2192</span>
+                <span className="drawer-nav-arrow" aria-hidden="true">→</span>
               </a>
             ))}
           </nav>
 
-          <div className="drawer-spacer" />
-
-          <section className="drawer-featured" aria-label="\u0412\u044b\u0431\u043e\u0440 \u0434\u0438\u0437\u0430\u0439\u043d\u0430">
-            <p>{"\u0413\u043e\u0442\u043e\u0432\u044b \u0432\u044b\u0431\u0440\u0430\u0442\u044c \u043f\u0440\u0438\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u0435?"}</p>
-            <span>{"Premium \u00b7 2 800 \u0441\u043e\u043c"}</span>
+          <section className="drawer-featured" aria-label="Выбор дизайна">
+            <p>
+              Готовы выбрать
+              <br />
+              приглашение?
+            </p>
+            <span>PREMIUM · 2 800 СОМ</span>
             <a className="drawer-cta" href="#catalog" onClick={onClose}>
-              <span>{"\u0412\u042b\u0411\u0420\u0410\u0422\u042c \u0414\u0418\u0417\u0410\u0419\u041d"}</span>
-              <span aria-hidden="true">\u2192</span>
+              <span>ВЫБРАТЬ ДИЗАЙН</span>
+              <span aria-hidden="true">→</span>
             </a>
           </section>
 
           <div className="drawer-footer">
             <strong>TOYLY</strong>
             <span>Digital Invitations</span>
-            <small>{"\u0411\u0438\u0448\u043a\u0435\u043a \u00b7 2026"}</small>
+            <small>Бишкек · 2026</small>
           </div>
         </div>
       </aside>

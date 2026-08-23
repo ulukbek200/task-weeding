@@ -2096,3 +2096,233 @@ button {
     font-size: 150px;
   }
 }
+
+/* Mobile menu targeted fixes */
+@media (max-width: 760px) {
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 14px 0 20px;
+  }
+
+  .mobile-menu-button {
+    margin-left: auto;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 0;
+  }
+
+  .drawer-backdrop {
+    background: rgba(15, 14, 12, 0.45);
+    backdrop-filter: blur(2px);
+  }
+
+  .drawer-panel {
+    right: 0;
+    width: calc(100vw - 28px);
+    max-width: 400px;
+    height: 100dvh;
+    min-height: 100dvh;
+    background: #f4efe6;
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.08);
+    transition: transform 450ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .drawer-inner {
+    display: block;
+    height: 100%;
+    padding: max(24px, env(safe-area-inset-top)) 24px max(20px, env(safe-area-inset-bottom));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .drawer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0;
+  }
+
+  .drawer-brand {
+    min-height: 44px;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .drawer-close-button {
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    margin-left: auto;
+  }
+
+  .drawer-label {
+    margin: 30px 0 16px;
+    color: #a98558;
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    line-height: 1.2;
+  }
+
+  .drawer-nav {
+    display: grid;
+    gap: 0;
+    margin: 0;
+  }
+
+  .drawer-nav-link {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) 20px;
+    align-items: center;
+    column-gap: 12px;
+    min-height: 64px;
+    height: 64px;
+    border-bottom: 1px solid rgba(20, 18, 15, 0.12);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 300ms ease, transform 300ms ease, color 180ms ease, background 180ms ease;
+  }
+
+  .mobile-drawer.is-open .drawer-nav-link {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: var(--item-delay, 110ms);
+  }
+
+  .drawer-nav-number {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: #a98558;
+  }
+
+  .drawer-nav-title {
+    min-width: 0;
+    overflow: visible;
+    font-size: 19px;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .drawer-nav-arrow {
+    justify-self: end;
+    color: #a98558;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .drawer-spacer,
+  .drawer-ornament {
+    display: none;
+  }
+
+  .drawer-featured {
+    display: grid;
+    gap: 12px;
+    margin-top: 48px;
+    padding: 22px 20px;
+    background: #171512;
+    color: var(--color-light);
+  }
+
+  .drawer-featured p {
+    max-width: 230px;
+    margin: 0;
+    font-size: 23px;
+    line-height: 0.95;
+  }
+
+  .drawer-featured > span {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+  }
+
+  .drawer-cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 20px;
+    align-items: center;
+    min-height: 54px;
+    margin-top: 4px;
+    border-top: 1px solid rgba(245, 240, 232, 0.22);
+    color: var(--color-light);
+    font-size: 12px;
+    font-weight: 780;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .drawer-cta span:last-child {
+    justify-self: end;
+  }
+
+  .drawer-footer {
+    display: grid;
+    gap: 2px;
+    margin-top: 22px;
+    color: rgba(23, 22, 18, 0.68);
+  }
+
+  .drawer-footer strong {
+    color: #171512;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .drawer-footer span,
+  .drawer-footer small {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 340px) {
+  .drawer-panel {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .drawer-inner {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .drawer-label {
+    margin-top: 22px;
+    margin-bottom: 12px;
+  }
+
+  .drawer-nav-link {
+    grid-template-columns: 28px minmax(0, 1fr) 20px;
+    column-gap: 10px;
+    min-height: 50px;
+    height: 50px;
+  }
+
+  .drawer-nav-title {
+    font-size: 18px;
+  }
+
+  .drawer-featured {
+    gap: 8px;
+    margin-top: 20px;
+    padding: 18px 16px;
+  }
+
+  .drawer-featured p {
+    font-size: 21px;
+  }
+
+  .drawer-cta {
+    min-height: 46px;
+  }
+
+  .drawer-footer {
+    margin-top: 14px;
+  }
+}

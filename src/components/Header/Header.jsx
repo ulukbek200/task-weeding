@@ -45,8 +45,8 @@ export function Header() {
         onClick={() => setMenuOpen(true)}
         aria-expanded={menuOpen}
         aria-controls="mobile-menu"
-        aria-label="\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e"
-        title="\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e"
+        aria-label="Открыть меню"
+        title="Открыть меню"
       >
         <span className="burger-icon" aria-hidden="true">
           <span />
