@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
 import { MobileMenu } from "./MobileMenu.jsx";
 
 const navItems = [
@@ -41,13 +40,18 @@ export function Header() {
       </div>
 
       <button
-        className="icon-button mobile-menu-button"
+        className={"icon-button mobile-menu-button" + (menuOpen ? " is-open" : "")}
         type="button"
         onClick={() => setMenuOpen(true)}
-        aria-label="Открыть меню"
-        title="Открыть меню"
+        aria-expanded={menuOpen}
+        aria-controls="mobile-menu"
+        aria-label="\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e"
+        title="\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e"
       >
-        <Menu size={22} />
+        <span className="burger-icon" aria-hidden="true">
+          <span />
+          <span />
+        </span>
       </button>
 
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
