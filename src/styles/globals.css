@@ -1339,3 +1339,317 @@ button {
   font-weight: 760;
   text-align: right;
 }
+
+@media (max-width: 640px) {
+  :root {
+    --container: calc(100% - 40px);
+    --header-height: 66px;
+  }
+
+  .site-header {
+    min-height: var(--header-height);
+    padding-inline: 20px;
+  }
+
+  .brand-mark {
+    min-height: 36px;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .icon-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    margin: 0;
+    padding: 52px 20px 68px;
+    overflow: visible;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 20px;
+    font-size: 11px;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+    font-size: clamp(48px, 14vw, 72px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .hero-subtitle {
+    max-width: 330px;
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .hero-price {
+    margin-top: 18px;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 24px;
+  }
+
+  .hero-actions .button {
+    justify-content: space-between;
+    min-height: 54px;
+    padding-inline: 20px;
+    font-size: 13px;
+  }
+
+  .hero-actions .text-link {
+    align-self: center;
+    justify-content: center;
+    margin-top: 28px;
+    min-height: 24px;
+    font-size: 15px;
+  }
+
+  .hero-visual {
+    position: relative;
+    width: 100%;
+    height: clamp(620px, 162vw, 690px);
+    min-height: 0;
+    margin-top: 24px;
+    overflow: visible;
+  }
+
+  .hero-phone {
+    top: 20px;
+    left: 50%;
+    animation: phoneFloat 7s ease-in-out infinite alternate;
+  }
+
+  .hero-phone-1 {
+    width: min(62vw, 245px);
+    transform: translateX(-68%) translateY(20px) scale(0.9) rotate(-7deg);
+    opacity: 0.72;
+  }
+
+  .hero-phone-2 {
+    width: min(76vw, 290px);
+    transform: translateX(-50%) rotate(1deg);
+  }
+
+  .hero-phone-3 {
+    width: min(58vw, 225px);
+    transform: translateX(-32%) translateY(36px) scale(0.9) rotate(7deg);
+    opacity: 0.74;
+  }
+
+  .phone-preview {
+    border-radius: 30px;
+    padding: 8px;
+  }
+
+  .phone-preview::after {
+    inset: 8px;
+    border-radius: 23px;
+  }
+
+  .phone-preview img,
+  .phone-preview iframe {
+    border-radius: 23px;
+  }
+
+  .phone-speaker {
+    top: 18px;
+    width: 64px;
+    height: 6px;
+  }
+
+  .proof-strip {
+    position: static;
+    display: grid;
+    gap: 8px;
+    width: 100%;
+    margin-top: 24px;
+    padding-top: 20px;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .catalog-section {
+    margin-top: 0;
+    padding: 72px 20px;
+  }
+
+  .catalog-heading-row {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 28px;
+  }
+
+  .catalog-section .section-heading h2 {
+    max-width: 270px;
+    font-size: clamp(42px, 12vw, 64px);
+    line-height: 0.94;
+    letter-spacing: -0.03em;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .catalog-section .section-heading > p:not(.eyebrow) {
+    max-width: 330px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .filter-row {
+    width: 100%;
+    gap: 8px;
+    margin-bottom: 26px;
+    padding: 0 0 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .filter-row button {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding-inline: 15px;
+  }
+
+  .template-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .template-card {
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .template-visual {
+    min-height: 340px;
+    padding: 18px 0;
+  }
+
+  .template-phone {
+    width: min(74vw, 260px);
+  }
+
+  .template-card h3 {
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .template-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .template-actions .button {
+    justify-content: center;
+    min-height: 50px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 340px) {
+  :root {
+    --container: calc(100% - 32px);
+  }
+
+  .site-header {
+    padding-inline: 16px;
+  }
+
+  .brand-mark {
+    font-size: 26px;
+  }
+
+  .hero-section {
+    padding: 48px 16px 64px;
+  }
+
+  .hero-copy h1 {
+    font-size: 44px;
+    line-height: 0.94;
+  }
+
+  .hero-subtitle {
+    max-width: 292px;
+    font-size: 15px;
+  }
+
+  .hero-price {
+    font-size: 14px;
+  }
+
+  .hero-visual {
+    height: 552px;
+    margin-top: 20px;
+  }
+
+  .hero-phone-1 {
+    width: 54vw;
+    transform: translateX(-70%) translateY(24px) scale(0.86) rotate(-7deg);
+  }
+
+  .hero-phone-2 {
+    width: min(74vw, 238px);
+  }
+
+  .hero-phone-3 {
+    display: none;
+  }
+
+  .catalog-section {
+    padding: 68px 16px;
+  }
+
+  .catalog-section .section-heading h2 {
+    max-width: 238px;
+    font-size: 42px;
+  }
+
+  .template-visual {
+    min-height: 316px;
+  }
+
+  .template-phone {
+    width: min(74vw, 238px);
+  }
+}
+
+@media (max-width: 640px) {
+  .catalog-section {
+    overflow-x: clip;
+  }
+
+  .filter-row {
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    contain: paint;
+  }
+}
