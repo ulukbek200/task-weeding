@@ -59,6 +59,18 @@ export const templates = [
     surface: "#ead2d1",
     tags: ["Кыз узатуу", "Family", "Kyrgyz", "Современные"],
   },
+  {
+    id: "velora",
+    name: "VELORA 3D",
+    category: "\u0421\u0432\u0430\u0434\u044c\u0431\u0430",
+    subtitle: "Premium 3D Wedding Invitation",
+    price: 2800,
+    demoUrl: "https://velora-peach-ten.vercel.app/",
+    previewImage: "/previews/velora.webp",
+    accent: "#17110f",
+    surface: "#efe2cf",
+    tags: ["Wedding", "3D", "Premium", "\u0421\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435"],
+  },
 ];
 
 export const filters = [

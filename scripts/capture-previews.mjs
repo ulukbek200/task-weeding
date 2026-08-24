@@ -8,7 +8,19 @@ const templates = [
   ["ak-niyet-classic", "https://ak-niyet-wcug.vercel.app/"],
   ["wedding-classic", "https://weeding2-two.vercel.app/"],
   ["ak-jol", "https://ak-jol-five.vercel.app/"],
+  ["velora", "https://velora-peach-ten.vercel.app/"],
 ];
+
+const requestedIds = new Set(process.argv.slice(2));
+const templatesToCapture = requestedIds.size
+  ? templates.filter(([id]) => requestedIds.has(id))
+  : templates;
+
+if (requestedIds.size && templatesToCapture.length !== requestedIds.size) {
+  const knownIds = new Set(templates.map(([id]) => id));
+  const missingIds = [...requestedIds].filter((id) => !knownIds.has(id));
+  throw new Error(`Unknown template id(s): ${missingIds.join(", ")}`);
+}
 
 const browserPaths = [
   process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE,
@@ -42,9 +54,20 @@ const context = await browser.newContext({
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
 });
 
-for (const [id, url] of templates) {
+for (const [id, url] of templatesToCapture) {
   const page = await context.newPage();
-  await page.goto(url, { waitUntil: "networkidle", timeout: 60000 });
+  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+  await page.waitForLoadState("load", { timeout: 30000 }).catch(() => {});
+
+  const openTrigger = page.locator(".open-trigger").first();
+  if (await openTrigger.count()) {
+    await openTrigger.click({ timeout: 5000 }).catch(() => {});
+    await page
+      .waitForFunction(() => !document.querySelector(".opening-stage"), null, { timeout: 15000 })
+      .catch(() => {});
+    await page.waitForTimeout(600);
+  }
+
   await page.waitForTimeout(1800);
   await page.screenshot({
     path: path.join(outDir, `${id}.webp`),
