@@ -9,6 +9,7 @@ const templates = [
   ["wedding-classic", "https://weeding2-two.vercel.app/"],
   ["ak-jol", "https://ak-jol-five.vercel.app/"],
   ["velora", "https://velora-peach-ten.vercel.app/"],
+  ["kyz-uzatuu", "https://kyz-uzatuu-five.vercel.app/"],
 ];
 
 const requestedIds = new Set(process.argv.slice(2));
@@ -59,11 +60,11 @@ for (const [id, url] of templatesToCapture) {
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
   await page.waitForLoadState("load", { timeout: 30000 }).catch(() => {});
 
-  const openTrigger = page.locator(".open-trigger").first();
+  const openTrigger = page.locator(".open-trigger, .opening-button").first();
   if (await openTrigger.count()) {
     await openTrigger.click({ timeout: 5000 }).catch(() => {});
     await page
-      .waitForFunction(() => !document.querySelector(".opening-stage"), null, { timeout: 15000 })
+      .waitForFunction(() => !document.querySelector(".opening-stage, .opening-experience"), null, { timeout: 15000 })
       .catch(() => {});
     await page.waitForTimeout(600);
   }

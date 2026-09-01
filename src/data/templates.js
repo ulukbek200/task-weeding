@@ -71,6 +71,18 @@ export const templates = [
     surface: "#efe2cf",
     tags: ["Wedding", "3D", "Premium", "\u0421\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435"],
   },
+  {
+    id: "kyz-uzatuu",
+    name: "KYZ UZATUU",
+    category: "\u041a\u044b\u0437 \u0443\u0437\u0430\u0442\u0443\u0443",
+    subtitle: "Premium Kyrgyz Send-Off Invitation",
+    price: 2800,
+    demoUrl: "https://kyz-uzatuu-five.vercel.app/",
+    previewImage: "/previews/kyz-uzatuu.webp",
+    accent: "#6d1018",
+    surface: "#efe3cc",
+    tags: ["\u041a\u044b\u0437 \u0443\u0437\u0430\u0442\u0443\u0443", "Premium", "Kyrgyz", "\u0422\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u044b\u0435"],
+  },
 ];
 
 export const filters = [
